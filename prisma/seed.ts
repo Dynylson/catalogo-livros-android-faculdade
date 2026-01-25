@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt';
+import { MOCK_USER_ID } from '../src/config/mock-user';
 
 const prisma = new PrismaClient();
 
@@ -14,6 +15,7 @@ async function main() {
     const hash = await bcrypt.hash(password, 10);
     await prisma.user.create({
       data: {
+        id: MOCK_USER_ID,
         email,
         password: hash,
         name,

@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { listBooks } from '../../services/books/book-service';
+import { MOCK_USER_ID } from '../../config/mock-user';
 
 export async function listBooksController(
   req: Request,
@@ -7,8 +8,7 @@ export async function listBooksController(
   next: NextFunction,
 ) {
   try {
-    const userId = req.userId as number;
-    const books = await listBooks(userId);
+    const books = await listBooks(MOCK_USER_ID);
     res.json(books);
   } catch (err) {
     next(err);
