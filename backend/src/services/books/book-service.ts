@@ -8,6 +8,7 @@ export type CreateBookInput = {
   status: 'READ' | 'READING' | 'WANT_TO_READ';
   rating?: number;
   review?: string;
+  imageUrl?: string;
 };
 
 export type UpdateBookInput = Partial<CreateBookInput>;
