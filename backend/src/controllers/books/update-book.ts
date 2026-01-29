@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { updateBook } from '../../services/books/book-service';
 import { updateBookSchema } from '../../utils/validation';
-import { MOCK_USER_ID } from '../../config/mock-user';
 
 export async function updateBookController(
   req: Request,
@@ -13,7 +12,7 @@ export async function updateBookController(
 
     const payload = updateBookSchema.parse(req.body);
 
-    const book = await updateBook(MOCK_USER_ID, id, payload);
+    const book = await updateBook(req.userId!, id, payload);
 
     if (!book) {
       return res.status(404).json({ message: 'Livro não encontrado' });
