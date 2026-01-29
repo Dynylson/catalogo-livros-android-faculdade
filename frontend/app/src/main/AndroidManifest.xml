@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.CatalogoDelivros"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <!-- Tela Inicial -->
@@ -26,10 +27,6 @@
 
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".CadastroActivity"
             android:exported="false" />
 
         <activity
