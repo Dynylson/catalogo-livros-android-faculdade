@@ -22,24 +22,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <ImageView
-            android:id="@+id/ivBookIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_book"
-            android:tint="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <ImageView
-            android:id="@+id/ivBookCover"
-            android:layout_width="150dp"
-            android:layout_height="220dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toBottomOf="@id/btnVoltar"
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Criar Livro"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toTopOf="@id/btnVoltar"
+            app:layout_constraintBottom_toBottomOf="@id/btnVoltar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/tvCapaLabel"
@@ -48,7 +42,7 @@
             android:text="Capa (URL):"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/ivBookCover"
+            app:layout_constraintTop_toBottomOf="@id/btnVoltar"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="24dp"/>
 
@@ -98,41 +92,13 @@
             android:layout_marginTop="6dp"/>
 
         <TextView
-            android:id="@+id/tvGeneroLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gênero:"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etTitulo"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/etGenero"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/edit_text_background"
-            android:hint=""
-            android:inputType="text"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/cinza"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvGeneroLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="6dp"/>
-
-        <TextView
             android:id="@+id/tvAutorLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Autor:"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etGenero"
+            app:layout_constraintTop_toBottomOf="@id/etTitulo"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"/>
 
@@ -154,10 +120,10 @@
             android:layout_marginTop="6dp"/>
 
         <TextView
-            android:id="@+id/tvSinopseLabel"
+            android:id="@+id/tvGeneroLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sinopse:"
+            android:text="Gênero:"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/etAutor"
@@ -165,7 +131,35 @@
             android:layout_marginTop="16dp"/>
 
         <EditText
-            android:id="@+id/etSinopse"
+            android:id="@+id/etGenero"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:background="@drawable/edit_text_background"
+            android:hint=""
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/cinza"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvGeneroLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/tvReviewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Review:"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/etGenero"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etReview"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:background="@drawable/edit_text_background"
@@ -176,7 +170,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/cinza"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvSinopseLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvReviewLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="6dp"/>
@@ -186,7 +180,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/etSinopse"
+            app:layout_constraintTop_toBottomOf="@id/etReview"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp">
@@ -226,7 +220,7 @@
             android:layout_height="50dp"
             android:text="Criar livro"
             android:textColor="@color/white"
-            android:backgroundTint="@color/cinza"
+            android:backgroundTint="@color/verde"
             android:textAllCaps="false"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/rgStatus"

@@ -22,13 +22,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <ImageView
-            android:id="@+id/ivBookIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_book"
-            android:tint="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detalhes do Livro"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toTopOf="@id/btnVoltar"
+            app:layout_constraintBottom_toBottomOf="@id/btnVoltar"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <ImageView
@@ -36,7 +40,7 @@
             android:layout_width="180dp"
             android:layout_height="260dp"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toBottomOf="@id/btnVoltar"
+            app:layout_constraintTop_toBottomOf="@id/tvHeader"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp"/>
@@ -98,17 +102,29 @@
             style="?android:attr/ratingBarStyle"/>
 
         <TextView
-            android:id="@+id/tvSinopse"
+            android:id="@+id/tvReviewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Review:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvReview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text='A "Sociedade do Anel" (1954), de J.R.R. Tolkien, inicia a saga onde o hobbit Frodo Bolseiro herda o "Um Anel" de Bilbo e a descoberta ser o artefato maligno de Sauron. Para evitar a dominação da Terra-média, Frodo parte do Condado com amigos, o guiado por Gandalf e forma uma comitiva (sociedade) para destruir o anel na Montanha da Perdição.'
+            android:text=""
             android:textColor="@color/white"
             android:textSize="14sp"
             android:lineSpacingExtra="4dp"
-            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            app:layout_constraintTop_toBottomOf="@id/tvReviewLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:id="@+id/llButtons"
@@ -116,7 +132,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/tvSinopse"
+            app:layout_constraintTop_toBottomOf="@id/tvReview"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp">

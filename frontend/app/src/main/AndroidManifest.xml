@@ -41,6 +41,10 @@
             android:name=".DetalhesLivroActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".EditarLivroActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
