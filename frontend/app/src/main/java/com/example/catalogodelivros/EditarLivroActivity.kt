@@ -28,6 +28,7 @@ class EditarLivroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_editar_livro)
 
         sessionManager = SessionManager(this)

@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgAzulEscuro"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="24dp">
 
-        <ImageButton
-            android:id="@+id/btnVoltar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/arrow_left"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
 
-        <ImageView
-            android:id="@+id/ivBookIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_book"
-            android:tint="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_left"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/white"
+                android:layout_gravity="center_vertical|start"/>
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalhes do Livro"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/ivBookCover"
             android:layout_width="180dp"
             android:layout_height="260dp"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toBottomOf="@id/btnVoltar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"/>
 
         <TextView
             android:id="@+id/tvTitulo"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Senhor dos anéis:\nA sociedade do anel"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textAlignment="center"
             android:fontFamily="sans-serif-medium"
-            app:layout_constraintTop_toBottomOf="@id/ivBookCover"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"/>
 
         <TextView
@@ -63,9 +64,7 @@
             android:textColor="@color/cinza"
             android:textSize="14sp"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp"/>
 
         <TextView
@@ -76,9 +75,7 @@
             android:textColor="@color/cinza"
             android:textSize="14sp"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/tvGenero"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="2dp"/>
 
         <RatingBar
@@ -91,34 +88,36 @@
             android:progressTint="@color/verde"
             android:progressBackgroundTint="@color/cinza"
             android:secondaryProgressTint="@color/verde"
-            app:layout_constraintTop_toBottomOf="@id/tvAutor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             style="?android:attr/ratingBarStyle"/>
 
         <TextView
-            android:id="@+id/tvSinopse"
-            android:layout_width="0dp"
+            android:id="@+id/tvReviewLabel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text='A "Sociedade do Anel" (1954), de J.R.R. Tolkien, inicia a saga onde o hobbit Frodo Bolseiro herda o "Um Anel" de Bilbo e a descoberta ser o artefato maligno de Sauron. Para evitar a dominação da Terra-média, Frodo parte do Condado com amigos, o guiado por Gandalf e forma uma comitiva (sociedade) para destruir o anel na Montanha da Perdição.'
+            android:text="Review:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="14sp"
             android:lineSpacingExtra="4dp"
-            app:layout_constraintTop_toBottomOf="@id/ratingBar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:id="@+id/llButtons"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/tvSinopse"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp">
 
             <Button
@@ -157,5 +156,5 @@
                 android:textAllCaps="false"/>
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

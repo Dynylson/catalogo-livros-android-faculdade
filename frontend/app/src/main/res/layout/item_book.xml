@@ -15,12 +15,27 @@
         android:orientation="vertical"
         android:padding="12dp">
 
-        <ImageView
-            android:id="@+id/ivBookCover"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBookCover"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"/>
+
+            <ImageButton
+                android:id="@+id/btnMoreOptions"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end|top"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_more_vert"
+                android:background="@drawable/circle_background"
+                android:tint="@color/white"
+                android:padding="4dp"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvBookTitle"

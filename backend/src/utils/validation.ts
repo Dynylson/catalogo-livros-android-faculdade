@@ -10,6 +10,7 @@ export const createBookSchema = z.object({
   status: bookStatusEnum,
   rating: z.number().int().min(1).max(5).optional(),
   review: z.string().optional(),
+  imageUrl: z.string().url().optional().or(z.literal('')),
 });
 
 export const updateBookSchema = createBookSchema

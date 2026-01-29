@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgAzulEscuro">
+    android:background="@color/bgAzulEscuro"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <ImageView
         android:id="@+id/ivBookIcon"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:layout_marginBottom="24dp"
         android:src="@drawable/ic_book"
-        android:tint="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="24dp"/>
+        android:tint="@color/white" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Livros foda"
-        android:textColor="@color/white"
-        android:textSize="24sp"
+        android:layout_marginBottom="120dp"
         android:fontFamily="sans-serif-medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="120dp"/>
+        android:text="Catálogo de Livros"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnEntrar"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="Entrar"
-        android:textColor="@color/white"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/azul"
+        android:text="Entrar"
         android:textAllCaps="false"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp"/>
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
