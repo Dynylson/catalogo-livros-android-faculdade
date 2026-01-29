@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { deleteBook } from '../../services/books/book-service';
-import { MOCK_USER_ID } from '../../config/mock-user';
 
 export async function deleteBookController(
   req: Request,
@@ -10,7 +9,7 @@ export async function deleteBookController(
   try {
     const id = Number.parseInt(req.params.id);
 
-    const deleted = await deleteBook(MOCK_USER_ID, id);
+    const deleted = await deleteBook(req.userId!, id);
 
     if (!deleted) {
       return res.status(404).json({ message: 'Livro não encontrado' });
