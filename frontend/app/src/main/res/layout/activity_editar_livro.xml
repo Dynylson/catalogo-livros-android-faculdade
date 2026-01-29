@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgAzulEscuro"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="24dp">
 
-        <ImageButton
-            android:id="@+id/btnVoltar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/arrow_left"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
 
-        <TextView
-            android:id="@+id/tvHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Editar Livro"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-medium"
-            app:layout_constraintTop_toTopOf="@id/btnVoltar"
-            app:layout_constraintBottom_toBottomOf="@id/btnVoltar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_left"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/white"
+                android:layout_gravity="center_vertical|start"/>
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar Livro"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/btnVoltar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"/>
 
         <TextView
@@ -52,13 +52,11 @@
             android:text="Capa (URL):"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/btnVoltar"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="24dp"/>
 
         <EditText
             android:id="@+id/etCapaUrl"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/edit_text_background"
             android:hint=""
@@ -68,9 +66,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/cinza"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvCapaLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="6dp"/>
 
         <TextView
@@ -80,13 +75,11 @@
             android:text="Título:"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etCapaUrl"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"/>
 
         <EditText
             android:id="@+id/etTitulo"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/edit_text_background"
             android:hint=""
@@ -96,9 +89,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/cinza"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvTituloLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="6dp"/>
 
         <TextView
@@ -108,13 +98,11 @@
             android:text="Autor:"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etTitulo"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"/>
 
         <EditText
             android:id="@+id/etAutor"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/edit_text_background"
             android:hint=""
@@ -124,9 +112,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/cinza"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvAutorLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="6dp"/>
 
         <TextView
@@ -136,13 +121,11 @@
             android:text="Gênero:"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etAutor"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"/>
 
         <EditText
             android:id="@+id/etGenero"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/edit_text_background"
             android:hint=""
@@ -152,9 +135,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/cinza"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvGeneroLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="6dp"/>
 
         <TextView
@@ -164,13 +144,11 @@
             android:text="Review:"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etGenero"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"/>
 
         <EditText
             android:id="@+id/etReview"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="120dp"
             android:background="@drawable/edit_text_background"
             android:hint=""
@@ -180,25 +158,19 @@
             android:textColor="@color/white"
             android:textColorHint="@color/cinza"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tvReviewLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="6dp"/>
 
         <Button
             android:id="@+id/btnSalvar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Salvar alterações"
             android:textColor="@color/white"
             android:backgroundTint="@color/verde"
             android:textAllCaps="false"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/etReview"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

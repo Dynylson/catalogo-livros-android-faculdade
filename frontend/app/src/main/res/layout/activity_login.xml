@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgAzulEscuro"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/ivBookLogo"
@@ -13,10 +13,18 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_book"
         android:tint="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/tvEmailLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/tvEmailLabel"
@@ -25,25 +33,11 @@
         android:text="Email:"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/ivBookLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="60dp"/>
-
-    <TextView
-        android:id="@+id/tvEmailLabel2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="8dp"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivBookLogo" />
+        android:layout_marginTop="40dp"/>
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/edit_text_background"
         android:hint=""
@@ -52,9 +46,6 @@
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="@color/cinza"
-        app:layout_constraintTop_toBottomOf="@id/tvEmailLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <TextView
@@ -64,13 +55,11 @@
         android:text="Senha:"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"/>
 
     <EditText
         android:id="@+id/etSenha"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/edit_text_background"
         android:hint=""
@@ -79,23 +68,22 @@
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="@color/cinza"
-        app:layout_constraintTop_toBottomOf="@id/tvSenhaLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Entrar"
         android:textColor="@color/white"
         android:backgroundTint="@color/azul"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="40dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
